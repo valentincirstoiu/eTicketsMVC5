@@ -6,6 +6,8 @@
         SIFY,
         Drama,
         Comedy,
-        Documentary
+        Documentary,
+        Horror,
+        Cartoon
     }
 }

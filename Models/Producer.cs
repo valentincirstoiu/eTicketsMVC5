@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace eTicketsMVC5.Models
 {
@@ -6,8 +7,14 @@ namespace eTicketsMVC5.Models
     {
         [Key]
         public int ProducerId { get; set; }
-        public string ProfilePictureUrl { get; set; }
-        public string Fullname { get; set; }
+        [Display(Name = "Profile Picture")]
+        public string ProfilePictureURL { get; set; }
+        [Display(Name = "Full Name")]
+        public string FullName { get; set; }
+        [Display(Name = "Bio")]
         public string Bio { get; set; }
+
+        //Relationships
+        public  List<Movie> Movies { get; set; }
     }
 }

@@ -1,6 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System;
 using eTicketsMVC5.Data.Enums;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace eTicketsMVC5.Models
 {
@@ -16,5 +18,15 @@ namespace eTicketsMVC5.Models
         public DateTime EndDate { get; set; }
         //FROM folder Data MovieCategory
         public MovieCategory MovieCategory { get; set; }
+        //Relatuinships
+        public List<Actor_Movie> Actor_Movies { get; set; }
+        //Cinema
+        public int CinemaId { get; set; }
+        [ForeignKey("CinemaId")]
+        public Cinema Cinema { get; set; }
+        //Producer
+        public int ProducerId { get; set; }
+        [ForeignKey("ProducerId")]
+        public Producer Producer { get; set; }
     }
 }
